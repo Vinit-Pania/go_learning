@@ -43,8 +43,8 @@ func main() {
 
 	fmt.Println(utf8.RuneCountInString("test")) // Actually provide the  length of the test
 
-	var myRune rune = 'a'
-	fmt.Println(myRune) //Provide unicode of letter a
+	var myRune rune = 'a' //Also import unicode package for rune
+	fmt.Println(myRune)   //Provide unicode of letter a
 
 	var1, var2 := 1, 2
 	fmt.Println(var1, var2)

@@ -57,7 +57,7 @@ func printWithStringParameter(printValue string) {
 func intDivision(numerator int, denominator int) (int, int, error) {
 	var err error
 	if denominator == 0 {
-		err = errors.New("Value cant be zero")
+		err = errors.New("value cant be zero")
 	}
 	var result = numerator / denominator
 	var remainder = numerator % denominator
