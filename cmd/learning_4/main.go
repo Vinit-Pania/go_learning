@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
@@ -29,11 +31,11 @@ func main() {
 
 	int_Slice1 := []int32{2, 21, 221, 2221, 2221}
 	fmt.Println(int_Slice1)
-	fmt.Println("The lebgth of the aare is %v and the capacity of the array is %v", len(int_Slice1), cap(int_Slice1))
+	fmt.Printf("The lebgth of the aare is %v and the capacity of the array is %v", len(int_Slice1), cap(int_Slice1))
 
 	int_Slice1 = append(int_Slice1, 222211)
 	fmt.Println(int_Slice1)
-	fmt.Println("\n The lebgth of the aare is %v and the capacity of the array is %v", len(int_Slice1), cap(int_Slice1))
+	fmt.Printf("\n The lebgth of the aare is %v and the capacity of the array is %v", len(int_Slice1), cap(int_Slice1))
 
 	//cant reAD THE value from the added part of the capacity
 	fmt.Println(int_Slice1[4])
@@ -57,14 +59,14 @@ func main() {
 	//has another valve which is a boolean if value present then true else false
 	var age, ok = myMap2["Adam"]
 	if ok {
-		fmt.Println("The age is %v", age)
+		fmt.Printf("The age is %v\n", age)
 	} else {
 		fmt.Println("Invalid namu")
 	}
 
 	age, ok = myMap2["Json"]
 	if ok {
-		fmt.Println("The age is %v", age)
+		fmt.Printf("The age is %v\n", age)
 	} else {
 		fmt.Println("Invalid namu")
 	}
@@ -73,8 +75,43 @@ func main() {
 	delete(myMap2, "Eve")
 	age, ok = myMap2["Eve"]
 	if ok {
-		fmt.Println("The age is %v", age)
+		fmt.Printf("The age is %v\n", age)
 	} else {
 		fmt.Println("Invalid namu")
 	}
+
+	// for loops in map
+	var Hexenzirkel map[string]uint8 = map[string]uint8{"alice": 1, "Barbeloth": 2, "I. Ivanovna N.": 3, "Andersdotter": 4, "Nicole Reeyn": 5, "Octavia ": 6, "Rhinedottir": 7}
+	for namae := range Hexenzirkel {
+		fmt.Printf("Name: %v\n", namae)
+	}
+
+	for namae, position := range Hexenzirkel {
+		fmt.Printf("Name: %v , Position : %v \n ", namae, position)
+	}
+
+	//For loop in Array or slice
+	for i, v := range intArr {
+		fmt.Printf("Index : %v , Range : %v \n", i, v)
+	}
+
+	//While loop not directly present we can makeshift using for
+	var i int = 0
+	for i < 10 {
+		fmt.Println(i)
+		i = i + 1
+	}
+
+	for {
+		if i >= 5 {
+			break
+		}
+		fmt.Println(i)
+		i = i + 1
+	}
+	//
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
 }
