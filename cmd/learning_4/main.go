@@ -46,4 +46,35 @@ func main() {
 	var int_Slice3 []int32 = make([]int32, 1, 10)
 	fmt.Println(int_Slice3)
 
+	//learinig map which is key:value pair
+	var myMap1 map[string]uint8 = make(map[string]uint8)
+	fmt.Println(myMap1)
+
+	var myMap2 map[string]uint8 = map[string]uint8{"Adam": 12, "Eve": 25}
+	fmt.Println(myMap2["Adam"])
+	fmt.Println(myMap2["Json"]) // will give default value which is 0
+
+	//has another valve which is a boolean if value present then true else false
+	var age, ok = myMap2["Adam"]
+	if ok {
+		fmt.Println("The age is %v", age)
+	} else {
+		fmt.Println("Invalid namu")
+	}
+
+	age, ok = myMap2["Json"]
+	if ok {
+		fmt.Println("The age is %v", age)
+	} else {
+		fmt.Println("Invalid namu")
+	}
+
+	//delete value from map use buitin fn called delete
+	delete(myMap2, "Eve")
+	age, ok = myMap2["Eve"]
+	if ok {
+		fmt.Println("The age is %v", age)
+	} else {
+		fmt.Println("Invalid namu")
+	}
 }
