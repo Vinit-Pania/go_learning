@@ -42,7 +42,7 @@ func main() {
 
 	var int_Slice2 []int32 = []int32{222222211, 2121212212}
 	int_Slice2 = append(int_Slice1, int_Slice2...)
-	fmt.Println(int_Slice1)
+	fmt.Println(int_Slice2)
 
 	//another way makeing slice using slice which has lemgth and capacity default length == capacity
 	var int_Slice3 []int32 = make([]int32, 1, 10)
@@ -72,6 +72,7 @@ func main() {
 	}
 
 	//delete value from map use buitin fn called delete
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	delete(myMap2, "Eve")
 	age, ok = myMap2["Eve"]
 	if ok {
@@ -81,35 +82,41 @@ func main() {
 	}
 
 	// for loops in map
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	var Hexenzirkel map[string]uint8 = map[string]uint8{"alice": 1, "Barbeloth": 2, "I. Ivanovna N.": 3, "Andersdotter": 4, "Nicole Reeyn": 5, "Octavia ": 6, "Rhinedottir": 7}
 	for namae := range Hexenzirkel {
 		fmt.Printf("Name: %v\n", namae)
 	}
 
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	for namae, position := range Hexenzirkel {
 		fmt.Printf("Name: %v , Position : %v \n ", namae, position)
 	}
 
 	//For loop in Array or slice
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	for i, v := range intArr {
 		fmt.Printf("Index : %v , Range : %v \n", i, v)
 	}
 
 	//While loop not directly present we can makeshift using for
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	var i int = 0
 	for i < 10 {
 		fmt.Println(i)
 		i = i + 1
+		for {
+			if i >= 10 {
+				fmt.Println("break")
+				break
+			}
+			fmt.Println(i)
+			i = i + 1
+		}
 	}
 
-	for {
-		if i >= 5 {
-			break
-		}
-		fmt.Println(i)
-		i = i + 1
-	}
-	//
+	//Differernt method of while loop
+	fmt.Println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 	for i := 0; i < 10; i++ {
 		fmt.Println(i)
 	}
